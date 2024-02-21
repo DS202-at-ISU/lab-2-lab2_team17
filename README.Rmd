@@ -11,6 +11,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Lab report #2
 
+```{r}
+
+install.packages("remotes")
+library(remotes)
+remotes::install_github("heike/classdata")
+library(classdata)
+
+```
+
+
 Summary of Finding: 
 
 
