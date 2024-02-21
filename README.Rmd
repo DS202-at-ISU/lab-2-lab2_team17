@@ -9,7 +9,44 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Lab report #1
+# Lab report #2
+
+Summary of Finding: 
+
+
+# Question 1: Inspect the first few lines of the data set
+
+## What variables are there?
+
+
+## What type are the variables?
+
+
+## What do we expect their data range to be? 
+
+
+
+# Question 2: Is there a variable of special interest or focus?
+
+
+
+# Question 3: Start the exploration with the main variable
+
+## What is the range of the variable 
+
+
+## What is the general pattern?
+
+
+## Is there anything odd?
+
+
+
+# Question 4: Pick a variable that might be related to the main variable Sale Price 
+
+## Variable Choosen: 
+
+
 
 Follow the instructions posted at https://ds202-at-isu.github.io/labs.html for the lab assignment. The work is meant to be finished during the lab time, but you have time until Monday evening to polish things.
 
