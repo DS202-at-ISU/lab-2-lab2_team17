@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 
-install.packages("remotes")
+install.packages('plyr', repos = "http://cran.us.r-project.org")
 library(remotes)
 remotes::install_github("heike/classdata")
 library(classdata)
