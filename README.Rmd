@@ -120,22 +120,37 @@ Expected Data Range: Different neighborhood names as factor with 42 levels\
 # Question 2: Is there a variable of special interest or focus?
 
 
-
 # Question 3: Start the exploration with the main variable
 
-## What is the range of the variable 
+```{r}
+# range 
+summary(ames$`Sale Price`)
 
+# NA values 
+sum(is.na(ames$`Sale Price`))
 
-## What is the general pattern?
+# Extreme values 
+sum(ames$`Sale Price` > 1000000, na.rm = TRUE)
 
+#Distribution 
+library(ggplot2)
 
-## Is there anything odd?
+ggplot(ames, aes(x = `Sale Price`)) +
+  geom_histogram(binwidth = 100000) +
+  labs(title = "Distribution of Sale Prices",
+       x = "Sale Price (USD)",
+       y = "Frequency")
+```
 
+**Main Variable:** Sale Price\
+Range: 0 to $20,500,000\
+General pattern: Skewed right\ 
+Oddities: No NA values but does have a few extreme values and looking at the histogram you can see a few outliers\
 
 
 # Question 4: Pick a variable that might be related to the main variable Sale Price 
 
-## Variable Choosen: 
+**Variable Chosen:**  
 
 
 
