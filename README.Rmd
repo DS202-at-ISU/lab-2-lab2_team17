@@ -171,7 +171,7 @@ ggplot(a, aes(x = YearBuilt)) +
        x = "Year Built",
        y = "Frequency")
 
-# Relationship of Year Built vs Sale Price
+# Relationship 
 ggplot(a, aes(x = YearBuilt, y = `Sale Price`)) +
   geom_point(size = 1.5) +
   labs(title = "Year Built vs Sale Price",
@@ -182,8 +182,9 @@ ggplot(a, aes(x = YearBuilt, y = `Sale Price`)) +
 
 Group member name: Emily Green\
 Range: 0 to 2022\
-General pattern of variable: Bimodel 
-Oddities of variable: Lots of NA values and has a extreme value of 0. 
+General pattern of variable: Bimodel\ 
+Oddities of variable: Lots of NA values and has a extreme value of 0\
+Relationship: Looks like a linear relationship but has a few outliers. Since an oddity found for sale price was it having a few outliers it makes sense that this variable has some outliers when looking at their relationship\
 
 
 Follow the instructions posted at https://ds202-at-isu.github.io/labs.html for the lab assignment. The work is meant to be finished during the lab time, but you have time until Monday evening to polish things.
