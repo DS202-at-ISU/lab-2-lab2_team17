@@ -13,7 +13,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 
-install.packages('plyr', repos = "http://cran.us.r-project.org")
 library(remotes)
 remotes::install_github("heike/classdata")
 library(classdata)
@@ -21,18 +20,62 @@ library(classdata)
 ```
 
 
-Summary of Finding: 
+# Summary of Finding: 
 
 
 # Question 1: Inspect the first few lines of the data set
 
+```{r}
+
+head(ames)
+str(ames)
+summary(ames)
+colnames(ames)
+
+```
+
+
 ## What variables are there?
+Parcel ID, Address, Style, Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres, TotalLivingArea (sf), Bedrooms, FinishedBsmtArea (sf), LotArea(sf), AC, FirePlace, Neighborhood
 
 
 ## What type are the variables?
 
+Parcel ID: Character 
+Address: Character              
+Style: Factor 
+Occupancy: Factor           
+Sale Date: Date 
+Sale Price: Numeric          
+Multi Sale: Character 
+YearBuilt: Numeric          
+Acres: Numeric
+TotalLivingArea (sf): Numeric 
+Bedrooms: Numeric 
+FinishedBsmtArea (sf): Numeric 
+LotArea(sf): Numeric 
+AC: Character                  
+FirePlace: Character 
+Neighborhood: Factor 
 
 ## What do we expect their data range to be? 
+
+Parcel ID:
+Address:            
+Style:
+Occupancy:            
+Sale Date:
+Sale Price:          
+Multi Sale:
+YearBuilt:          
+Acres:
+TotalLivingArea (sf):
+Bedrooms:
+FinishedBsmtArea (sf):
+LotArea(sf):
+AC:                 
+FirePlace:
+Neighborhood:
 
 
 
