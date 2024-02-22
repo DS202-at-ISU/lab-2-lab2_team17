@@ -27,55 +27,93 @@ library(classdata)
 
 ```{r}
 
+?ames 
+colnames(ames)
 head(ames)
 str(ames)
-summary(ames)
-colnames(ames)
+summary(ames$AC)
 
 ```
 
+**Parcel ID**:\
+Format: Character\
+Description: Unique identifier for each property\
+Expected Data Range: Unique IDs, length of characters varies\
 
-## What variables are there?
-Parcel ID, Address, Style, Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres, TotalLivingArea (sf), Bedrooms, FinishedBsmtArea (sf), LotArea(sf), AC, FirePlace, Neighborhood
+**Address**:\
+Format: Character\
+Description: Property address in Ames, IA\
+Expected Data Range: Various addresses in Ames, IA\
 
+**Style**:\
+Format: Factor\
+Description: Type of housing, such as "Colonial," "Ranch," "Split-Level," etc.\
+Expected Data Range: Different housing styles as factor with 12 levels\
 
-## What type are the variables?
+**Occupancy**:\
+Format: Factor\
+Description: Type of occupancy, indicating whether the property is occupied or not\
+Expected Data Range: Occupancy status as factor with 5 levels\
 
-Parcel ID: Character 
-Address: Character              
-Style: Factor 
-Occupancy: Factor           
-Sale Date: Date 
-Sale Price: Numeric          
-Multi Sale: Character 
-YearBuilt: Numeric          
-Acres: Numeric
-TotalLivingArea (sf): Numeric 
-Bedrooms: Numeric 
-FinishedBsmtArea (sf): Numeric 
-LotArea(sf): Numeric 
-AC: Character                  
-FirePlace: Character 
-Neighborhood: Factor 
+**Sale Date**:\
+Format: Date\
+Description: Date of the property sale\
+Expected Data Range: Dates ranging from 2017-07-03 to 2022-08-31\
 
-## What do we expect their data range to be? 
+**Sale Price**:\
+Format: Numeric (in US dollars)\
+Description: Sales price of the property\
+Expected Data Range: Sale prices in US dollars, varying from 0 to 20500000\
 
-Parcel ID:
-Address:            
-Style:
-Occupancy:            
-Sale Date:
-Sale Price:          
-Multi Sale:
-YearBuilt:          
-Acres:
-TotalLivingArea (sf):
-Bedrooms:
-FinishedBsmtArea (sf):
-LotArea(sf):
-AC:                 
-FirePlace:
-Neighborhood:
+**Multi Sale**:\
+Format: Character (logical- boolean)\
+Description: Indicates if the sale was part of a package or multiple sale\
+Expected Data Range: Y/N\
+
+**YearBuilt**:\
+Format: Numeric (integer)\
+Description: Year in which the house was built\
+Expected Data Range: Years ranging from 0 to 2022\
+
+**Acres**:\
+Format: Numeric\
+Description: Size of the lot in acres\
+Expected Data Range: Acres of the lots, ranging from 0 to 12.0120\
+
+**TotalLivingArea (sf)**:\
+Format: Numeric (Square Feet)\
+Description: Total living area of the property in square feet\
+Expected Data Range: Living area sizes in square feet, varying from 0 to 6007\
+
+**Bedrooms**:\
+Format: Numeric\
+Description: Number of bedrooms in the property\
+Expected Data Range: Number of bedrooms, ranging from 0 to 10\
+
+**FinishedBsmtArea (sf)**:\
+Format: Numeric (Square Feet)\
+Description: Total area of the finished basement in square feet\
+Expected Data Range: Sizes of finished basement areas in square feet, ranging from 10 to 6496\
+
+**LotArea(sf)**:\
+Format: Numeric (Square Feet)\
+Description: Total area of the lot in square feet\
+Expected Data Range: Lot areas in square feet, ranging from 0 to 523228\
+
+**AC**:\
+Format: Character (logical- boolean)\
+Description: Indicates if the property has air conditioning\
+Expected Data Range: Yes/No\
+
+**FirePlace**:
+Format: Character (logical- boolean)
+Description: Indicates if the property has a fireplace\
+Expected Data Range: Yes/No\
+
+**Neighborhood**:\
+Format: Factor\
+Description: Neighborhood area in Ames\
+Expected Data Range: Different neighborhood names as factor with 42 levels\
 
 
 
