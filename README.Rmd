@@ -117,7 +117,9 @@ Expected Data Range: Different neighborhood names as factor with 42 levels\
 
 
 
-# Question 2: Is there a variable of special interest or focus?
+# Question 2: Is there a variable of special interest or focus?    
+
+Sale Price is the main variable of interest. There are many other variables that are related to it.
 
 
 # Question 3: Start the exploration with the main variable
