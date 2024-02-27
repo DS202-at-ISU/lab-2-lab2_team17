@@ -17,10 +17,21 @@ library(classdata)
 
 # Summary of Finding:
 
+There is a total of 16 variables, with Sale Price being the main
+variable. It seems there is a positive correlation between Sale Price
+with Total Living Area and Year Built. There are outliers which we can
+deduce is a anomaly of luxuriousness. People tend to settle with buying
+places with 2-4 bedrooms.
+
 # Question 1: Inspect the first few lines of the data set
 
 ``` r
 ?ames 
+```
+
+    ## starting httpd help server ... done
+
+``` r
 colnames(ames)
 ```
 
@@ -329,6 +340,71 @@ Relationship: Looks like a linear relationship but has a few outliers.
 Since an oddity found for sale price was it having a few outliers it
 makes sense that this variable has some outliers when looking at their
 relationship  
+
+``` r
+summary(ames$`Bedrooms`)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    ##   0.000   3.000   3.000   3.299   4.000  10.000     447
+
+``` r
+ggplot(ames, aes(x = `Bedrooms`)) +
+  geom_histogram(binwidth = 1, fill = "skyblue", color = "black") +
+  labs(title = "Distribution of Bedrooms",
+       x = "Bedrooms",
+       y = "Frequency")
+```
+
+    ## Warning: Removed 447 rows containing non-finite values (`stat_bin()`).
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+``` r
+ggplot(ames, aes(x = `Bedrooms`, y = `Sale Price`)) +
+  geom_point(alpha =0.5, color = "blue")
+```
+
+    ## Warning: Removed 447 rows containing missing values (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-6-2.png)<!-- -->
+
+``` r
+  labs(title = "Sale Price, vs # of Bedrooms", 
+       x = "Bedrooms", 
+       y = "Sale Price")
+```
+
+    ## $x
+    ## [1] "Bedrooms"
+    ## 
+    ## $y
+    ## [1] "Sale Price"
+    ## 
+    ## $title
+    ## [1] "Sale Price, vs # of Bedrooms"
+    ## 
+    ## attr(,"class")
+    ## [1] "labels"
+
+``` r
+ggplot(ames, aes(x = cut(`Bedrooms`, breaks = 10), y = `Sale Price`)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  labs(title = "Sale Price vs # of Bedrooms ",
+       x = "Bedrooms",
+       y = "Sale Price")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-6-3.png)<!-- --> Mason
+Sackpraseuth: Range: 0-10 Pattern: Histogram is slightly right skewed
+with some alternate peaks. Oddities: lots of missing values (N/A). A lot
+of people tend to go with 3 bedrooms, followed by 4 and then 2.
+Surprisingly enough there is no sales with 9 bedrooms but there is with
+10. Relationship: There is a non-linear relationship between the number
+of bedrooms and the sale price. Most of the price seems to clump
+together except for a few outliers. We can assume these outliers as
+luxurious homes. There are a number of bedrooms ranging from the 2-4
+range.
 
 Follow the instructions posted at
 <https://ds202-at-isu.github.io/labs.html> for the lab assignment. The
