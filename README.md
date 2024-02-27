@@ -195,7 +195,8 @@ levels
 # Question 2: Is there a variable of special interest or focus?
 
 Sale Price is the main variable of interest. It is a numerical variable
-with many other variables related to it as we can predict prices..
+that can help determine which other key variables contribute to the
+pricing of residential properties in Ames.
 
 # Question 3: Start the exploration with the main variable
 
