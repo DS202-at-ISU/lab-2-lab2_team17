@@ -21,11 +21,6 @@ library(classdata)
 
 ``` r
 ?ames 
-```
-
-    ## starting httpd help server ... done
-
-``` r
 colnames(ames)
 ```
 
@@ -175,8 +170,9 @@ Format: Character (logical- boolean)
 Description: Indicates if the property has air conditioning  
 Expected Data Range: Yes/No  
 
-**FirePlace**: Format: Character (logical- boolean) Description:
-Indicates if the property has a fireplace  
+**FirePlace**:  
+Format: Character (logical- boolean) Description: Indicates if the
+property has a fireplace  
 Expected Data Range: Yes/No  
 
 **Neighborhood**:  
@@ -235,7 +231,7 @@ outliers
 
 # Question 4: Pick a variable that might be related to the main variable Sale Price
 
-**Variable Chosen:** Year Built  
+**Variable Chosen:** Year Built TotalLivingArea  
 
 ``` r
 # Range 
@@ -282,7 +278,50 @@ ggplot(a, aes(x = YearBuilt, y = `Sale Price`)) +
 
 ![](README_files/figure-gfm/unnamed-chunk-4-2.png)<!-- -->
 
-Group member name: Emily Green  
+``` r
+# Range 
+summary(ames$`TotalLivingArea (sf)`)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    ##       0    1095    1460    1507    1792    6007     447
+
+``` r
+sum(is.na(ames$`TotalLivingArea (sf)`))
+```
+
+    ## [1] 447
+
+``` r
+summary(ames$`TotalLivingArea (sf)` < 500, na.rm = TRUE)
+```
+
+    ##    Mode   FALSE    TRUE    NA's 
+    ## logical    6291     197     447
+
+``` r
+# Distribution of Total Living Area
+b <- na.omit(ames) 
+ggplot(b, aes(x = `TotalLivingArea (sf)`)) +
+  geom_histogram(binwidth = 100, fill = 'blue', color = 'black') +
+  labs(title = "Distribution of Total Living Area",
+       x = "Total Living Area (sf)",
+       y = "Frequency")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+``` r
+# Relationship with Sale Price
+ggplot(a, aes(x = `TotalLivingArea (sf)`, y = `Sale Price`)) +
+  geom_point(size = 1.5) +
+  labs(title = "Year Built vs Sale Price",
+       x = "Total Living Area",
+       y = "Sale Price (USD)")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-5-2.png)<!-- --> Group member
+name: Emily Green Manjul Balayar  
 Range: 0 to 2022  
 General pattern of variable: Bimodel  Oddities of variable: Lots of NA
 values and has a extreme value of 0  
