@@ -194,8 +194,8 @@ levels
 
 # Question 2: Is there a variable of special interest or focus?
 
-Sale Price is the main variable of interest. There are many other
-variables that are related to it.
+Sale Price is the main variable of interest. It is a numerical variable
+with many other variables related to it as we can predict prices..
 
 # Question 3: Start the exploration with the main variable
 

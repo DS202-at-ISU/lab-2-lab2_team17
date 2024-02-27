@@ -119,7 +119,7 @@ Expected Data Range: Different neighborhood names as factor with 42 levels\
 
 # Question 2: Is there a variable of special interest or focus?    
 
-Sale Price is the main variable of interest. There are many other variables that are related to it.
+Sale Price is the main variable of interest. It is a numerical variable with many other variables related to it as we can predict prices..
 
 
 # Question 3: Start the exploration with the main variable
@@ -211,7 +211,6 @@ Oddities of variable: Lots of NA values and has a extreme value of 0\
 Relationship: Looks like a linear relationship but has a few outliers. Since an oddity found for sale price was it having a few outliers it makes sense that this variable has some outliers when looking at their relationship\
 
 ``` {r}
-
 summary(ames$`Bedrooms`)
 
 ggplot(ames, aes(x = `Bedrooms`)) +
@@ -231,8 +230,6 @@ ggplot(ames, aes(x = cut(`Bedrooms`, breaks = 10), y = `Sale Price`)) +
   labs(title = "Sale Price vs # of Bedrooms ",
        x = "Bedrooms",
        y = "Sale Price")
-
-  
 ```
 Mason Sackpraseuth:
 Range: 0-10
