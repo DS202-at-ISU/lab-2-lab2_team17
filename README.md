@@ -396,16 +396,18 @@ ggplot(ames, aes(x = cut(`Bedrooms`, breaks = 10), y = `Sale Price`)) +
        y = "Sale Price")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-6-3.png)<!-- --> Mason
-Sackpraseuth: Range: 0-10 Pattern: Histogram is slightly right skewed
-with some alternate peaks. Oddities: lots of missing values (N/A). A lot
-of people tend to go with 3 bedrooms, followed by 4 and then 2.
-Surprisingly enough there is no sales with 9 bedrooms but there is with
-10. Relationship: There is a non-linear relationship between the number
-of bedrooms and the sale price. Most of the price seems to clump
-together except for a few outliers. We can assume these outliers as
-luxurious homes. There are a number of bedrooms ranging from the 2-4
-range.
+![](README_files/figure-gfm/unnamed-chunk-6-3.png)<!-- -->  Mason
+Sackpraseuth: Range: 0-10  
+Pattern: Histogram is slightly right skewed with some alternate peaks.
+
+Oddities: lots of missing values (N/A). A lot of people tend to go with
+3 bedrooms, followed by 4 and then 2. Surprisingly enough there is no
+sales with 9 bedrooms but there is with 10.
+
+Relationship: There is a non-linear relationship between the number of
+bedrooms and the sale price. Most of the price seems to clump together
+except for a few outliers. We can assume these outliers as luxurious
+homes. There are a number of bedrooms ranging from the 2-4 range.
 
 Follow the instructions posted at
 <https://ds202-at-isu.github.io/labs.html> for the lab assignment. The
