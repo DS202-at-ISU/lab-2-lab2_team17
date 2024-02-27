@@ -105,7 +105,7 @@ Format: Character (logical- boolean)\
 Description: Indicates if the property has air conditioning\
 Expected Data Range: Yes/No\
 
-**FirePlace**:
+**FirePlace**:\
 Format: Character (logical- boolean)
 Description: Indicates if the property has a fireplace\
 Expected Data Range: Yes/No\
@@ -152,7 +152,7 @@ Oddities: No NA values but does have a few extreme values and looking at the his
 
 # Question 4: Pick a variable that might be related to the main variable Sale Price 
 
-**Variable Chosen:**  Year Built\
+**Variable Chosen:**  Year Built\ TotalLivingArea\
 
 ```{r}
 
@@ -181,8 +181,30 @@ ggplot(a, aes(x = YearBuilt, y = `Sale Price`)) +
        y = "Sale Price (USD)")
 
 ```
+```{r}
+# Range 
+summary(ames$`TotalLivingArea (sf)`)
 
-Group member name: Emily Green\
+sum(is.na(ames$`TotalLivingArea (sf)`))
+
+summary(ames$`TotalLivingArea (sf)` < 500, na.rm = TRUE)
+
+# Distribution of Total Living Area
+b <- na.omit(ames) 
+ggplot(b, aes(x = `TotalLivingArea (sf)`)) +
+  geom_histogram(binwidth = 100, fill = 'blue', color = 'black') +
+  labs(title = "Distribution of Total Living Area",
+       x = "Total Living Area (sf)",
+       y = "Frequency")
+
+# Relationship with Sale Price
+ggplot(a, aes(x = `TotalLivingArea (sf)`, y = `Sale Price`)) +
+  geom_point(size = 1.5) +
+  labs(title = "Year Built vs Sale Price",
+       x = "Total Living Area",
+       y = "Sale Price (USD)")
+```
+Group member name: Emily Green\ Manjul Balayar\
 Range: 0 to 2022\
 General pattern of variable: Bimodel\ 
 Oddities of variable: Lots of NA values and has a extreme value of 0\
