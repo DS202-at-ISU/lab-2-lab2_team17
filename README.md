@@ -357,7 +357,8 @@ ggplot(ames, aes(x = `Bedrooms`)) +
        y = "Frequency")
 ```
 
-    ## Warning: Removed 447 rows containing non-finite values (`stat_bin()`).
+    ## Warning: Removed 447 rows containing non-finite outside the scale range
+    ## (`stat_bin()`).
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
@@ -366,7 +367,8 @@ ggplot(ames, aes(x = `Bedrooms`, y = `Sale Price`)) +
   geom_point(alpha =0.5, color = "blue")
 ```
 
-    ## Warning: Removed 447 rows containing missing values (`geom_point()`).
+    ## Warning: Removed 447 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
 
 ![](README_files/figure-gfm/unnamed-chunk-6-2.png)<!-- -->
 
@@ -408,6 +410,54 @@ Relationship: There is a non-linear relationship between the number of
 bedrooms and the sale price. Most of the price seems to clump together
 except for a few outliers. We can assume these outliers as luxurious
 homes. There are a number of bedrooms ranging from the 2-4 range.
+
+``` r
+# Range 
+summary(ames$Acres)
+```
+
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    ##  0.0000  0.1502  0.2200  0.2631  0.2770 12.0120      89
+
+``` r
+sum(is.na(ames$Acres))
+```
+
+    ## [1] 89
+
+``` r
+summary(ames$Acres < 5, na.rm = TRUE)
+```
+
+    ##    Mode   FALSE    TRUE    NA's 
+    ## logical       4    6842      89
+
+``` r
+# Distribution of Acres
+b <- na.omit(ames) 
+ggplot(b, aes(x = Acres)) +
+  geom_histogram(binwidth = 0.1, fill = 'blue', color = 'black') +
+  labs(title = "Distribution of Acres",
+       x = "Acres",
+       y = "Frequency")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+``` r
+# Relationship with Sale Price
+ggplot(b, aes(x = Acres, y = `Sale Price`)) +
+  geom_point(size = 1.5) +
+  labs(title = "Acres vs Sale Price",
+       x = "Acres",
+       y = "Sale Price (USD)")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-7-2.png)<!-- -->  Siddhartha
+Gudipudi: When we see the frequesncy v acres graph, it indicates that
+the frequency of houses below 0.4 acres is more than the above 0.4 acres
+houses which is a well known trend. We can see more smaller houses than
+bigger houses in Ames.
 
 Follow the instructions posted at
 <https://ds202-at-isu.github.io/labs.html> for the lab assignment. The
