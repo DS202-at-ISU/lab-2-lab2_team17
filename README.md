@@ -454,7 +454,9 @@ ggplot(b, aes(x = Acres, y = `Sale Price`)) +
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-7-2.png)<!-- -->  Siddhartha
-Gudipudi: When we see the frequesncy v acres graph, it indicates that
+Gudipudi: 
+Range: 0-1.25acres
+When we see the frequesncy v acres graph, it indicates that
 the frequency of houses below 0.4 acres is more than the above 0.4 acres
 houses which is a well known trend. We can see more smaller houses than
 bigger houses in Ames. When it comes to relationship of acres with sales
